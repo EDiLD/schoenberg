@@ -205,7 +205,7 @@
     for (i in seq_along(evaluated)) {
         ind <- seq_len(NROW(newx))
         if (any(is.factor.by)) {
-            ind <- newx[, by_var] == levs[i]
+            ind <- newx[, by_var] == object[[i]]$by.level
         }
         evaluated[[i]] <- spline_values(object[[i]],
                                         newdata = newx[ind, , drop = FALSE],
